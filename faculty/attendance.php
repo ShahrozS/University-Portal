@@ -52,7 +52,9 @@
 
 </div>
 
+<div id="extra">
 
+</div>
 
 
 
@@ -131,8 +133,8 @@ $("#generate").on("click",function(e){
       method: 'POST',
       data: { id: id, newData: newData },
       success: function(response) {
-        console.log('Data updated successfully for ID: ' + id);
-      },
+        $("#extra").html(response);
+    },
       error: function(xhr, status, error) {
         console.error('Error updating data for ID: ' + id);
       }

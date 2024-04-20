@@ -4,9 +4,10 @@ require '../connection.php';
 
 $lectureno = $_GET["lectureno"];
 $course_id = $_GET["course"];
-$date = $_GET["date"];
+$date1 = $_GET['date'];
+$date = date('Y-m-d', strtotime($date1));  
 
-echo "-->".$date;
+echo '<!--'.$date.'-->';
 
 
 // getting all students 
@@ -22,10 +23,9 @@ if(mysqli_num_rows($result)>0){
 while($row = mysqli_fetch_assoc($result)){
 
  
-$sql2 = "insert into attendance (userid,courseid,lectureno,date) values ({$row["uid"]},{$course_id},{$lectureno},{$date})";
+$sql2 = "insert into attendance (userid,courseid,lectureno,date) values ({$row["uid"]},{$course_id},{$lectureno},'{$date}')";
 
 if(mysqli_query($link,$sql2)){
-echo "done";
 }
 else{
     echo "cant insert";
@@ -35,7 +35,7 @@ else{
 }
 
 
-$sql3 = "select * from attendance where courseid = {$course_id} and lectureno = {$lectureno} and date = {$date}";
+$sql3 = "select * from attendance where courseid = {$course_id} and lectureno = {$lectureno} and date = '{$date}'";
 
 
 $result2 = mysqli_query($link,$sql3);
