@@ -1,6 +1,12 @@
 <?php
 // Admin login details is alread in database username: admin password: admin
 // Only admin can assign every other user credentials. 
+
+session_start();
+
+session_unset();
+session_destroy();
+
 ?>
 
 <!DOCTYPE html>
@@ -192,6 +198,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"]))
 
                     $_SESSION["username"] = $username;
                     $_SeSSION["password"] = $password;
+                    $_SESSION["role"] = $row["role"];
+                    $_SESSION["id"] = $row["id"];
 
                     if($row["role"] == "admin"){
                     $url = "admin/dashboard.php";

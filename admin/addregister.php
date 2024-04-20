@@ -3,6 +3,7 @@
 require '../connection.php';
 
 
+
 if(isset($_POST["registeraddbtn"])){
 
 
@@ -21,6 +22,14 @@ if(isset($_POST["registeraddbtn"])){
     if(!empty("$cid") && !empty("$uid") ){
         
         $sql = "INSERT INTO student_course (uid,cid) VALUES (?,?)";
+        $sql2 = "INSERT into grades(userid,courseid) values ({$uid},{$cid})";
+        
+        
+       
+        if(mysqli_query($link,$sql2)){
+            echo " insert into grade";
+        }
+        
         if($stmt=mysqli_prepare($link,$sql)){
 
             mysqli_stmt_bind_param($stmt,"ii",$uid,$cid);
