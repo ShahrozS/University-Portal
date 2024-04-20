@@ -20,7 +20,7 @@
    
 
 
-
+<!-- Collapses -->
 
     <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
@@ -144,6 +144,55 @@
       </div>
     </div>
   </div>
+
+<!-- Register -->
+
+<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+        Registration Detail
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+    <div class="accordion-body">
+      
+                    <table class="table" id="registertable">
+
+                    </table>
+
+                    <div class="add">
+                        <form name="registeradd" action="addregister.php" method="post">
+
+
+                            <input type="text" name="uid" placeholder="User ID">
+
+                            <input type="text" name="cid" placeholder="Course ID">
+
+
+                            <button name="registeraddbtn" id="registeraddbtn" class="btn btn-primary">Add
+                                Registration!</button>
+
+                        </form>
+                    </div>
+                    <div class="edit" id="redit">
+
+                    </div>
+
+                 
+      
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
@@ -228,13 +277,37 @@
 
             })
 
+            //getting registerations
+
+            function getRegisterDet() {
+
+                $.ajax({
+                    url: 'getregister.php',
+                    method: 'GET',
+                    success: function (res) {
+                        $('#registertable').html(res);
+                    }
+                });
+                }
+
+                getRegisterDet();
+
+
+
+                $("#registeraddbtn").on("click", function (e) {
+                console.log("hii?");
+                getRegisterDet();
+
+                })
+
+
             
 
 
 
         });
     </script>
-    <!-- PHP CODE TO HANDLE FORMS  -->
+    <!-- PHP CODE TO HANDLE FORMS  (TODO: DELETE LATER)-->
     <?php
 
 ob_start();

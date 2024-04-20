@@ -42,7 +42,7 @@ button{
 
 }
 
-Select{
+select{
     background-color:black;
     color:white;
     border-radius:5px;
@@ -89,14 +89,14 @@ form{
                 <label for="password">Enter Password</label>
                 <input type="text" name="password" id="password">
 
-                <label for="role">Select a role</label>
-                <Select name="role">
+                <label for="role">select a role</label>
+                <select name="role">
 
                     <option value="admin">Admin</option>
                     <option value="doctor">Doctor</option>
                     <option value="patient">Patient</option>
 
-                    </Select>
+                    </select>
 
                     <button type="submit" name="submit1">Add!</button>
 
@@ -134,13 +134,13 @@ form{
              <label for="password2">New password(leave blank if same)</label>
              <input type="text" name="password2" id="password2">
             
-             <Select name="role2">
+             <select name="role2">
                 <option value="" selected>Keep same</option>
                 <option value="admin">Admin</option>
                 <option value="doctor">Doctor</option>
                 <option value="patient">Patient</option>
                 
-               </Select>
+               </select>
 
 
                <button type="submit" name="submit3">Update!</button>

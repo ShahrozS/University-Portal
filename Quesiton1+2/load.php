@@ -12,7 +12,7 @@ if(!$link){
 }
 
 
-$sql = "Select * from user1";
+$sql = "select * from user1";
 
 $output = "";
 if($result = mysqli_query($link,$sql)){

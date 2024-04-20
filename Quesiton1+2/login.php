@@ -124,14 +124,14 @@ h3{
 <input type="password" name="password" id="password">
 
 
-<Select name="role" id="role">
+<select name="role" id="role">
     <option value="admin">Admin</option>
     
     <option value="doctor">Doctor</option>
     
     <option value="patient">Patient</option>
 
-</Select>
+</select>
 
 <button type="submit" name="submit">Login</button>
 
@@ -158,7 +158,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"]))
     $username = $_POST["username"];
     $password = $_POST["password"];
     $role = $_POST["role"];
-    $sql = "Select * from user1 where username = ? ";
+    $sql = "select * from user1 where username = ? ";
 
     if($stmt = mysqli_prepare($link,$sql)){
 
