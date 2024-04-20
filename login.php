@@ -197,6 +197,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"]))
                     $url = "admin/dashboard.php";
                     header('Location: '.$url);
                     }
+                    else if($row["role"] == "faculty"){
+                        $url = "faculty/dashboard.php";
+                        header('Location: '.$url);
+                    }
+                    else if($row["role"] == "student"){
+                        $url = "student/dashboard.php";
+                        header('Location: '.$url);
+                    }
                 
                 }
                 else{
