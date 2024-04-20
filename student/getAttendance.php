@@ -2,7 +2,9 @@
 
 $cid = $_GET["id"];
 
+session_start();
 $stdid = $_SESSION["id"];
+
 
 
 require '../connection.php';

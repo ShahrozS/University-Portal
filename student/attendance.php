@@ -1,3 +1,8 @@
+<?php session_start();
+    $_SESSION["id"] = 69;
+    ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,13 +28,13 @@
 
     <div class="courselist">
     <nav class="navbar bg-body-tertiary">
-  <form class="container-fluid justify-content-start" id="courselist">
-  </form>
+  <div class="container-fluid justify-content-start" id="courselist">
+</div>
 </nav>
     </div>
 
 
-    <table class="table" id="attendancetable">
+    <table class="table table-striped" id="attendancetable">
 
 
     
@@ -73,14 +78,15 @@ $(document).ready(function(){
     getCourses();
 
 
-    $("#coursebutton").on("click",function(e){
+    $(document).on("click", "#coursebutton", function(e) {
         var id = $(this).val();
+        console.log(id);
         $.ajax({
        url: 'getAttendance.php',
        method: 'GET',
        data : {id:id},
        success: function (res) {
-           $('#courselist').html(res);
+           $('#attendancetable').html(res);
        }
    });
 })

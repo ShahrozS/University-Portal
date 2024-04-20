@@ -149,6 +149,8 @@ $("#generate").on("click",function(e){
       console.log(id + newData);
       updateDataForRow(id, newData);
     });
+
+    location.reload();  
   });
 
 
