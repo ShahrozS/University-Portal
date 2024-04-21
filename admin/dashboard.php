@@ -44,7 +44,7 @@
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
       <div class="accordion-body">
       
-                    <table class="table" id="studenttable">
+                    <table class="table table-striped" id="studenttable">
 
                     </table>
 
@@ -87,7 +87,7 @@
     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
     <div class="accordion-body">
       
-      <table class="table" id="facultytable">
+      <table class="table  table-striped" id="facultytable">
 
       </table>
 
@@ -129,7 +129,7 @@
     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
     <div class="accordion-body">
       
-                    <table class="table" id="coursetable">
+                    <table class="table  table-striped"  id="coursetable">
 
                     </table>
 
@@ -168,7 +168,7 @@
     <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
     <div class="accordion-body">
       
-                    <table class="table" id="registertable">
+                    <table class="table  table-striped" id="registertable">
 
                     </table>
 

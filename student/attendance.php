@@ -20,7 +20,7 @@
 <div class="main">
 <div class="heading">
 
-<h1 class="display-2">Attendance</h1>
+<h1 class="display-2">ATTENDANCE</h1>
 
 </div>
 

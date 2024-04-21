@@ -14,6 +14,11 @@
 </head>
 
 <body>
+<div class="heading">
+
+<h1 class="display-2">GRADES</h1>
+
+</div>
 <?php
 include '../shared/topbar.php';
 ?>
