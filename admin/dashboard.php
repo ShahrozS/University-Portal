@@ -13,6 +13,18 @@
 <body>
 
 
+<div class="heading">
+
+<h1 class="display-2">Welcome Admin</h1>
+
+</div>
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body mb-4 "  data-bs-theme="dark">
+  <div class="container-fluid">
+ 
+    <button class="btn btn-danger" href="login.php"><a class="nav-link" href="../login.php">Logout!</a></button>
+
+  </div>
+</nav>
 
 
     <div class="container">

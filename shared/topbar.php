@@ -2,7 +2,7 @@
 if(isset($_SESSION['role'])){
     $role = $_SESSION["role"];
  }else{
-     header("Location: lcoalhost:3000/login.php");
+     header("Location: http://localhost:3000/login.php");
  }
 //these are dynamic links
 $home = "";

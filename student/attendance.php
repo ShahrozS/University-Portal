@@ -39,6 +39,9 @@ include '../shared/topbar.php';
 </nav>
     </div>
 
+    <div id="progressbar">
+   
+    </div>
 
     <table class="table table-striped" id="attendancetable">
 
@@ -91,11 +94,17 @@ $(document).ready(function(){
        url: 'getAttendance.php',
        method: 'GET',
        data : {id:id},
+       dataType: 'json',
        success: function (res) {
-           $('#attendancetable').html(res);
+        console.log(res.res1);
+           $('#attendancetable').html(res.res1);
+           $('#progressbar').html(res.res2);
        }
    });
 })
+
+
+
 
 
 
