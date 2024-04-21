@@ -15,6 +15,9 @@ session_destroy();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 
 <style>
@@ -25,7 +28,7 @@ body{
     align-items: center;
     background-color: whitesmoke;
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
 }
 
 .main{
@@ -37,7 +40,7 @@ body{
 }
 .card{
     width:500px;
-    height:300px;
+    height:400px;
     border-radius: 50px;
     
     background-color: gainsboro;
@@ -121,6 +124,8 @@ h3{
 <div class="main">
 
 
+<h1 class="display-1 mb-5">University Portal</h4>
+
 
 
 <div class="card">
@@ -128,17 +133,17 @@ h3{
 
 <div class="heading">
     
-<h1>Login Page</h1>
+<h1 class="mb-3">Login Page</h1>
 </div>
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-<label for="username">Username</label>
-<input type="text" id="username" name="username">
+<label for="username"  class="col-form-label">Username</label>
+<input type="text" class="form-text p-3" id="username" name="username">
 
 
-<label for="password">Password</label>
-<input type="password" name="password" id="password">
+<label for="password" class="col-form-label">Password</label>
+<input type="password" class="form-text p-3 mb-4" name="password" id="password">
 
 
 <select name="role" id="role">
@@ -253,5 +258,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"]))
 
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
 </body>
 </html>
