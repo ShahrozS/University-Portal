@@ -1,6 +1,8 @@
 <?php session_start();
-    $_SESSION["id"] =79 ;
-    ?>
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,38 +15,65 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+<style>
+
+body{
+  
+}
+
+  .form{
+   
+  }
+
+</style>
+
 
 <body>
 
 <div class="main">
+<div class="heading">
+
+<h1 class="display-2">Attendance</h1>
+
+</div>
+
 <?php
 include '../shared/topbar.php';
 ?>
 
+<div class="container">
+
 <div class="form">
 
-<label for="lectureno">Enter the lecture number</label>
-<input type="text" class="input" name="lectureno" id="lectureno">
+
+<div class="input-group mb-3 mt-3">
+  <span class="input-group-text bg-dark text-white " id="inputGroup-sizing-default">Lecture Number</span>
+  <input name="lectureno" id="lectureno" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
 
 
-<label for="courseselect">select the course</label>
-<select id="courseselect" name="courseselect" id="courseselect">
+<select id="courseselect" name="courseselect" id="courseselect" class="form-select mb-3 mt-3" aria-label="Default select example">
+<option selected>Open to select a course</option>
+
 
 </select>
 
 
-<label for="date">Enter the Date</label>
-<input type="date" class="input" name="date" id="date">
-
-
-<button class="btn btn-lg btn-primary" name="generate" id="generate">Generate Attendance!</button>
-
+<div class="input-group mb-3">
+  <span class="input-group-text  bg-dark text-white " id="inputGroup-sizing-default">Date</span>
+  <input name="date" id="date" name="lectureno" id="lectureno" type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 
 
-<div class="container">
 
-<button class = "btn btn-lg btn-success" name="" id="save">Save!</button>
+</div>
+
+<button class="btn btn-lg btn-primary" name="generate" id="generate">Generate Attendance!</button>
+
+
+<button class = "btn btn-lg btn-success " name="" id="save">Save!</button>
+
+
 <table class="table  table-striped" id="attendance">
 
 
@@ -52,7 +81,7 @@ include '../shared/topbar.php';
 </table>
 
 
-</div>
+
 
 <div id="extra">
 
@@ -62,7 +91,7 @@ include '../shared/topbar.php';
 
 </div>
 
-
+</div>
 
 
 

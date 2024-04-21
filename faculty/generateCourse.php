@@ -3,8 +3,11 @@
 
 session_start();
 
-$fid = $_SESSION["id"];
-
+if(isset($_SESSION['id'])){
+   $fid = $_SESSION["id"];
+}else{
+    header("Location: lcoalhost:3000/login.php");
+}
 require '../connection.php';
 
 

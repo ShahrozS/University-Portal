@@ -1,5 +1,4 @@
 <?php session_start();
-    $_SESSION["id"] = 69;
     ?>
 
 
@@ -19,15 +18,22 @@
 
 
 <div class="main">
-    <div class="heading">
-        <h1>Attendance Page</h1>
-    </div>
+<div class="heading">
+
+<h1 class="display-2">Attendance</h1>
+
+</div>
+
+<?php
+include '../shared/topbar.php';
+?>
 
 
     <div class="container">
 
     <div class="courselist">
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-dark mt-4 border-bottom border-body p-2 rounded-3 pt-2 pb-2">
+
   <div class="container-fluid justify-content-start" id="courselist">
 </div>
 </nav>

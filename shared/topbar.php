@@ -1,6 +1,9 @@
 <?php 
-
-$role = $_SESSION["role"];
+if(isset($_SESSION['role'])){
+    $role = $_SESSION["role"];
+ }else{
+     header("Location: lcoalhost:3000/login.php");
+ }
 //these are dynamic links
 $home = "";
 $attendance = "";
@@ -23,7 +26,7 @@ if($role == "student" ){
 
 ?>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body "  data-bs-theme="dark">
   <div class="container-fluid">
   <a class="navbar-brand" href="<?= $home ?>">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +47,7 @@ if($role == "student" ){
       </ul>
 
     </div>
-    <button class="btn btn-danger" href="login.php"><a href="../login.php">Logout!</a></button>
+    <button class="btn btn-danger" href="login.php"><a class="nav-link" href="../login.php">Logout!</a></button>
 
   </div>
 </nav>

@@ -21,7 +21,17 @@
 
 <div class="heading">
 
-<h1 class="display-2">Welcome <?php session_start(); $_SESSION["username"]?></h1>
+<h1 class="display-2">Welcome <?= session_start(); 
+
+
+
+
+if(isset($_SESSION['username'])){
+   echo $_SESSION["username"];
+
+ }else{
+     header("Location: lcoalhost:3000/login.php");
+ }?></h1>
 
 </div>
 <?php
