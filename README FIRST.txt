@@ -1,5 +1,7 @@
 ------IMPORTANT------
 
+import asstwo on phpmyadmin with database name = asstwo
+
 Run login.php to start
 
 To Log In:
