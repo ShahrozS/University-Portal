@@ -1,3 +1,8 @@
+<?= session_start(); ?>
+
+<?php
+include '../shared/validation.php';
+?>
 
 
 <!DOCTYPE html>
@@ -20,7 +25,7 @@
 
 <div class="heading">
 
-<h1 class="display-2">Welcome <?= session_start(); $_SESSION["username"] ?></h1>
+<h1 class="display-2">Welcome <?=  $_SESSION["username"] ?></h1>
 
 </div>
 <?php

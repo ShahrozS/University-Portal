@@ -2,7 +2,9 @@
 session_start();
 require '../connection.php';
 ?>
-
+<?php
+include '../shared/validation.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>

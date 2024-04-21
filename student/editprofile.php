@@ -2,6 +2,9 @@
 session_start();
 require '../connection.php';
 ?>
+<?php
+include '../shared/validation.php';
+?>
 
 <!doctype html>
 <html lang="en">
@@ -23,6 +26,7 @@ require '../connection.php';
 <?php
 include '../shared/topbar.php';
 ?>
+
 
     <div class="container mt-5">
 
@@ -58,15 +62,15 @@ include '../shared/topbar.php';
                                     </div>
                                     <div class="mb-3">
                                         <label>Lastname</label>
-                                        <input type="text" name="quiz" value="<?=$user['lastname'];?>" class="form-control">
+                                        <input type="text" name="lastname" value="<?=$user['lastname'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Username</label>
-                                        <input type="text" name="lastname" value="<?=$user['username'];?>" class="form-control">
+                                        <input type="text" name="username" value="<?=$user['username'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Password</label>
-                                        <input type="text" name="username" value="<?=$user['password'];?>" class="form-control">
+                                        <input type="text" name="password" value="<?=$user['password'];?>" class="form-control">
                                     </div>
                                    
                                     <div class="mb-3">
@@ -92,6 +96,7 @@ include '../shared/topbar.php';
 
 
 
+
 <?php
 
 
@@ -111,7 +116,7 @@ if(isset($_POST['update_user']))
 
 
 
-    $query = "UPDATE user SET firstname=$firstname, quiz=$quiz, lastname=$lastname, username=$username , password = $password WHERE id='$user_id' ";
+    $query = "UPDATE user SET firstname='$firstname', lastname='$lastname', username='$username' , password = '$password' WHERE id='$user_id' ";
     $query_run = mysqli_query($link, $query);
 
     if($query_run)

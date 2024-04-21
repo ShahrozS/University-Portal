@@ -2,7 +2,9 @@
 
     ?>
 
-
+<?php
+include '../shared/validation.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
