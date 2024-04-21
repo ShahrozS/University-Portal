@@ -24,7 +24,7 @@ require '../connection.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>faculty Edit 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="dashboard.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">

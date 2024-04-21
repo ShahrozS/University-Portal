@@ -11,10 +11,19 @@ require '../connection.php';
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <title>Student Edit</title>
+    <title>Grade Edit</title>
 </head>
 <body>
-  
+<div class="heading">
+
+<h1 class="display-2">EDIT PROFILE</h1>
+
+</div>
+
+<?php
+include '../shared/topbar.php';
+?>
+
     <div class="container mt-5">
 
 
@@ -23,45 +32,46 @@ require '../connection.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Edit 
+                        <h4>Profile Edit 
                             <a href="dashboard.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
 
                         <?php
-                        if(isset($_GET['id']))
+                        if(isset($_SESSION['id']))
                         {
-                            $student_id = mysqli_real_escape_string($link, $_GET['id']);
-                            $query = "SELECT * FROM user WHERE id='$student_id' ";
+                            $user_id =  $_SESSION['id'];
+                            $query = "SELECT * FROM user WHERE id='$user_id' ";
                             $query_run = mysqli_query($link, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
-                                $student = mysqli_fetch_array($query_run);
+                                $user = mysqli_fetch_array($query_run);
                                 ?>
                                     <form name="stdadd" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "post">
-                                    <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
+                                    <input type="hidden" name="user_id" value="<?= $user['id']; ?>">
 
                                     <div class="mb-3">
-                                        <label>Student First Name</label>
-                                        <input type="text" name="firstname" value="<?=$student['firstname'];?>" class="form-control">
+                                        <label>Firstname</label>
+                                        <input type="text" name="firstname" value="<?=$user['firstname'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student last name</label>
-                                        <input type="text" name="lastname" value="<?=$student['lastname'];?>" class="form-control">
+                                        <label>Lastname</label>
+                                        <input type="text" name="quiz" value="<?=$user['lastname'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Username</label>
-                                        <input type="text" name="username" value="<?=$student['username'];?>" class="form-control">
+                                        <label>Username</label>
+                                        <input type="text" name="lastname" value="<?=$user['username'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Password</label>
-                                        <input type="text" name="password" value="<?=$student['password'];?>" class="form-control">
+                                        <label>Password</label>
+                                        <input type="text" name="username" value="<?=$user['password'];?>" class="form-control">
                                     </div>
+                                   
                                     <div class="mb-3">
-                                        <button type="submit" name="update_student" class="btn btn-primary">
-                                            Update Student
+                                        <button type="submit" name="update_user" class="btn btn-primary">
+                                            Update Profile
                                         </button>
                                     </div>
 
@@ -87,26 +97,31 @@ require '../connection.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
    
-if(isset($_POST['update_student']))
+if(isset($_POST['update_user']))
 {
-    $student_id = mysqli_real_escape_string($link, $_POST['student_id']);
+    $user_id = mysqli_real_escape_string($link, $_POST['user_id']);
 
     $firstname = mysqli_real_escape_string($link, $_POST['firstname']);
     $lastname = mysqli_real_escape_string($link, $_POST['lastname']);
     $username = mysqli_real_escape_string($link, $_POST['username']);
-    $password = mysqli_real_escape_string($link, $_POST['password']);
+    $password= mysqli_real_escape_string($link, $_POST['password']);
+    
 
-    $query = "UPDATE user SET firstname='$firstname', lastname='$lastname', username='$username', password='$password' WHERE id='$student_id' ";
+
+
+
+
+    $query = "UPDATE user SET firstname=$firstname, quiz=$quiz, lastname=$lastname, username=$username , password = $password WHERE id='$user_id' ";
     $query_run = mysqli_query($link, $query);
 
     if($query_run)
     {
-        header("Location: dashboard.php");
+        header("Location: editprofile.php");
         exit(0);
     }
     else
     {
-        echo "Cant update student";
+        echo "Cant update user";
         exit(0);
     }
 
