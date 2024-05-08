@@ -207,15 +207,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"]))
                     $_SESSION["id"] = $row["id"];
 
                     if($row["role"] == "admin"){
-                    $url = "admin/dashboard.php";
+                    $url = "http://localhost/Assignment2/admin/dashboard.php";
                     header('Location: '.$url);
                     }
                     else if($row["role"] == "faculty"){
-                        $url = "faculty/dashboard.php";
+                        $url = "http://localhost/Assignment2/faculty/dashboard.php";
                         header('Location: '.$url);
                     }
                     else if($row["role"] == "student"){
-                        $url = "student/dashboard.php";
+                        $url = "http://localhost/Assignment2/student/dashboard.php";
                         header('Location: '.$url);
                     }
                 

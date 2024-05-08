@@ -14,18 +14,21 @@ $path = $urlParts['path'];
 
 $pathParts = explode('/', $path);
 
-$directoryName = $pathParts[1];
+$directoryName = $pathParts[2];
 
 
 if(isset($_SESSION["role"])){
 
-
+  
     if($_SESSION["role"] != $directoryName){
-        header("Location: lcoalhost:3000/login.php");
+        header("Location: http://localhost/Assignment2/login.php");
+       
 
-    }
+        }
 }
 else{
-    header("Location: lcoalhost:3000/login.php");
+  
+
+   header("Location: http://localhost/Assignment2/login.php");
 
 }

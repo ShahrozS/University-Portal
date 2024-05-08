@@ -29,7 +29,7 @@ if(isset($_SESSION['username'])){
    echo $_SESSION["username"];
 
  }else{
-     header("Location: lcoalhost:3000/login.php");
+     header("Location: localhost:3000/login.php");
  }?></h1>
 
 </div>

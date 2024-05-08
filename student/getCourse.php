@@ -6,7 +6,7 @@ require '../connection.php';
 if(isset($_SESSION['id'])){
     $uid = $_SESSION["id"];
  }else{
-     header("Location: lcoalhost:3000/login.php");
+     header("Location: localhost:3000/login.php");
  }
 $sql = "select * from course where id in (select cid from student_course where uid = {$uid}) ";
 

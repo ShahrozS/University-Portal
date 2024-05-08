@@ -6,7 +6,7 @@ session_start();
 if(isset($_SESSION['id'])){
     $stdid = $_SESSION["id"];
  }else{
-     header("Location: lcoalhost:3000/login.php");
+     header("Location: localhost:3000/login.php");
  }
 
 
